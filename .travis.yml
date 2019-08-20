@@ -6,7 +6,7 @@ before_install:
   - docker build -t doutside/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run doutside/react-test npm test --space --coverage
+  - docker run -e CI=true doutside/react-test npm test 
 
 after_success:
   - docker build -t doutside/multi-client ./client
