@@ -13,7 +13,7 @@ after_success:
   - docker build -t doutside/multi-nginx ./nginx
   - docker build -t doutside/multi-server ./server
   - docker build -t doutside/multi-worker ./worker
-  # Log in to docker CLI
+  # Log in to docker CLI 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push doutside/multi-client
